@@ -6,6 +6,8 @@ Acceder al framework: ​​cd ~/venvs/frameworkenv/bin
 
 Activar framework: source activate
 
+Desactivar framework: deactivate
+
 Dentro del framework se debe acceder a la carpeta donde se tienen los archivos de pruebas
 
 Para correr pruebas, instalamos pytest: pip install pytest
