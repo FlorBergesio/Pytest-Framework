@@ -1,7 +1,16 @@
 from pytest import mark
 
-@mark.smoke
 @mark.sports_car
 @mark.engine
-def test_engine_start():
-    assert True
+class EngineTests:
+
+    @mark.smoke
+    def test_engine_start(self):
+        assert True
+
+    @mark.smoke
+    def test_engine_off(self):
+        assert True
+
+    def test_engine_self_destruct(self):
+        assert True

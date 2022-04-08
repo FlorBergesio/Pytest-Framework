@@ -30,7 +30,12 @@ Para correr los tests de un directorio en particular: pytest directory/subdirect
 ### Marcadores
 
 Se pueden configurar marcadores en pytest.ini y utilizar en las diferentes pruebas.
+Para listar todos los marcadores registrados: pytest --markers
 Para correr solo las pruebas de un marcador: pytest -m marker_name
 Para correr las pruebas de varios marcadores: pytest -m "marker_name or another_marker"
 Para correr las pruebas que tienen varios marcadores a la vez: pytest -m "marker_name and another_marker"
 Para correr todas las pruebas excepto las de un marcador: pytest -m "not marker_name"
+
+### Clases
+
+Se pueden marcar las clases, lo que implicará que todos los métodos de esas clases tendrán el mismo marcador
