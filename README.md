@@ -26,6 +26,9 @@ Corremos pytest para correr las pruebas: pytest
 - Para obtener información más detallada utilizamos verbose: pytest -v
 - Para mostrar los standard out por linea de consola incluso en casos de éxito, se debe agregar -s al comando para correr los tests: pytest -s
 - Para poder usar selenium y webdriver debemos instalar selenium y webdriver_manager: 'pip install selenium' y luego 'pip install webdriver-manager'
+- Cuando una función de caso de prueba pasa con éxito, suele identificarlo con un punto .
+- Cuando una función de caso de prueba falla, suele identificarlo con la letra F
+
 
 ### Marcadores
 
