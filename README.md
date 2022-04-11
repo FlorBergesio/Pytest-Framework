@@ -13,19 +13,19 @@ Desactivar framework: deactivate
 
 Dentro del framework se debe acceder a la carpeta donde se tienen los archivos de pruebas
 
-Para correr pruebas, instalamos pytest: pip install pytest
+Para poder correr pruebas, instalamos pytest: pip install pytest
 
 Corremos pytest para correr las pruebas: pytest
-
-Para obtener información más detallada: pytest -v
-
-Para correr los tests de un directorio en particular: pytest directory/subdirectory
 
 
 ## Notas
 
 - Para que pytest reconozca funciones como casos de prueba, deben tener un nombre que comience con "test_"
 - Para configurar pytest se puede utilizar el archivo pytest.ini
+- Para correr los tests de un directorio en particular: pytest directory/subdirectory
+- Para obtener información más detallada utilizamos verbose: pytest -v
+- Para mostrar los standard out por linea de consola incluso en casos de éxito, se debe agregar -s al comando para correr los tests: pytest -s
+- Para poder usar selenium y webdriver debemos instalar selenium y webdriver_manager: 'pip install selenium' y luego 'pip install webdriver-manager'
 
 ### Marcadores
 
@@ -39,3 +39,13 @@ Para correr todas las pruebas excepto las de un marcador: pytest -m "not marker_
 ### Clases
 
 Se pueden marcar las clases, lo que implicará que todos los métodos de esas clases tendrán el mismo marcador
+
+## Fixtures
+Los fixtures se definen en el archivo conftest.py y se pueden utilizar desde cualquier archivo en la carpeta dondese encuentre y las subcarpetas de la misma
+Los fixtures pueden manejar su propio teardown, utilzando la palabra clave 'yield', todo lo que se defina después son las actividades de teardown
+Un fixture puede tener los siguientes scopes:
+- function: usa una unica instancia por función, sin importar cuantas veces se lo llame. Es el valor por defecto en caso de que no se defina un scope
+- session: usa una unica instancia en la totalidad de la sesión de testeo
+- class
+- module
+- package
