@@ -5,7 +5,9 @@ from pytest import mark
 class EngineTests:
 
     @mark.smoke
-    def test_engine_start(self):
+    @mark.browser
+    def test_engine_start(self, chrome_browser):
+        chrome_browser.get('https://www.uala.com.co/')
         assert True
 
     @mark.smoke

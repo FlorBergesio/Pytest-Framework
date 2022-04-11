@@ -5,5 +5,7 @@ from pytest import mark
 class DoorTests:
 
     @mark.smoke
-    def test_all_doors_locked(self):
+    @mark.browser
+    def test_all_doors_locked(self, chrome_browser):
+        chrome_browser.get('https://www.uala.com.ar/')
         assert True
