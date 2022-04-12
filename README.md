@@ -21,16 +21,22 @@ Corremos pytest para correr las pruebas: pytest
 ## Notas
 
 - Para que pytest reconozca funciones como casos de prueba, deben tener un nombre que comience con "test_"
-- Para configurar pytest se puede utilizar el archivo pytest.ini
 - Para correr los tests de un directorio en particular: pytest directory/subdirectory
 - Para obtener información más detallada utilizamos verbose: pytest -v
 - Para mostrar los standard out por linea de consola incluso en casos de éxito, se debe agregar -s al comando para correr los tests: pytest -s
 - Para poder usar selenium y webdriver debemos instalar selenium y webdriver_manager: 'pip install selenium' y luego 'pip install webdriver-manager'
 - Cuando una función de caso de prueba pasa con éxito, suele identificarlo con un punto .
 - Cuando una función de caso de prueba falla, suele identificarlo con la letra F
+- Para poder ver que paquetes tengo instalado en un ambiente: pip list
+
+## Configuraciones
+
+- Para configurar pytest se puede utilizar el archivo pytest.ini
+- Para configurar el proyecto para usar diferentes environments se puede utilizar el archivo config.py con funciones inicializadoras que luego utilizamos desde el archivo conftest.py con el uso de 'parser'
+- Si se definen textos de help, las opciones customizadas se mostrarán en pytest -h
 
 
-### Marcadores
+## Marcadores
 
 Se pueden configurar marcadores en pytest.ini y utilizar en las diferentes pruebas.
 Para listar todos los marcadores registrados: pytest --markers
@@ -39,7 +45,7 @@ Para correr las pruebas de varios marcadores: pytest -m "marker_name or another_
 Para correr las pruebas que tienen varios marcadores a la vez: pytest -m "marker_name and another_marker"
 Para correr todas las pruebas excepto las de un marcador: pytest -m "not marker_name"
 
-### Clases
+## Clases
 
 Se pueden marcar las clases, lo que implicará que todos los métodos de esas clases tendrán el mismo marcador
 
