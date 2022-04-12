@@ -56,3 +56,10 @@ pip-wheel-metadata/
 
 # pytest debug logs generated via --debug
 pytestdebug.log
+
+# reporting files
+results.xml
+
+# pytest-html reporting tool
+results.html
+/assets
