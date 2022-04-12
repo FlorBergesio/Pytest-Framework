@@ -44,6 +44,7 @@ Para correr todas las pruebas excepto las de un marcador: pytest -m "not marker_
 Se pueden marcar las clases, lo que implicará que todos los métodos de esas clases tendrán el mismo marcador
 
 ## Fixtures
+
 Los fixtures se definen en el archivo conftest.py y se pueden utilizar desde cualquier archivo en la carpeta dondese encuentre y las subcarpetas de la misma
 Los fixtures pueden manejar su propio teardown, utilzando la palabra clave 'yield', todo lo que se defina después son las actividades de teardown
 Un fixture puede tener los siguientes scopes:
@@ -52,3 +53,16 @@ Un fixture puede tener los siguientes scopes:
 - class
 - module
 - package
+
+## Reportes
+
+### Reportes html con pytest-html
+Para generar reportes en un archivo html instalamos pytest-html: pip install pytest-html
+Para generar un reporte corremos las pruebas indicando el nombre del archivos a generar: pytest --html="results.html"
+
+### Reportes xml con pytest core
+Para generar reportes xml corremos las pruebas indicando el nombre del archivo a generar: pytest --junitxml="results.xml"
+
+
+## Integración con Jenkins
+ -- To Do --
