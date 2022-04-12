@@ -5,5 +5,5 @@ from pytest import mark
 class LightsTests:
 
     @mark.smoke
-    def test_all_lights_switched_on():
+    def test_all_lights_switched_on(self):
         assert True
