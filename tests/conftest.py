@@ -2,6 +2,14 @@ from pytest import fixture
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from config import Config
+import json
+
+@fixture(scope='function', params=[webdriver.Chrome, webdriver.Firefox, webdriver.Edge])
+def browser(request):
+    driver = request.param
+    drvr = driver()
+    yield drvr
+    drvr.quit()
 
 @fixture(scope='function')
 def chrome_browser():
@@ -30,3 +38,13 @@ def env(request):
 def app_config(env):
     cfg = Config(env)
     return cfg
+
+def load_test_data(path):
+    with open(path) as data_file:
+        data = json.load(data_file)
+        return data
+
+@fixture(params=load_test_data('/Users/mariaflorenciabergesio/Documents/GitHub/framework_demo/tests/test_data.json'))
+def test_data(request):
+    data = request.param
+    return data

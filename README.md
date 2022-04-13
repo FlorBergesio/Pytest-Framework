@@ -24,7 +24,7 @@ Corremos pytest para correr las pruebas: pytest
 - Para correr los tests de un directorio en particular: pytest directory/subdirectory
 - Para obtener información más detallada utilizamos verbose: pytest -v
 - Para mostrar los standard out por linea de consola incluso en casos de éxito, se debe agregar -s al comando para correr los tests: pytest -s
-- Para poder usar selenium y webdriver debemos instalar selenium y webdriver_manager: 'pip install selenium' y luego 'pip install webdriver-manager'
+- Para poder usar selenium y webdriver debemos instalar selenium y webdriver_manager: 'pip install selenium' y luego 'pip install webdriver-manager'. (o agregar los diferentes drivers directamente al PATH)
 - Cuando una función de caso de prueba pasa con éxito, suele identificarlo con un punto .
 - Cuando una función de caso de prueba falla, suele identificarlo con la letra F
 - Para poder ver que paquetes tengo instalado en un ambiente: pip list
@@ -34,7 +34,6 @@ Corremos pytest para correr las pruebas: pytest
 - Para configurar pytest se puede utilizar el archivo pytest.ini
 - Para configurar el proyecto para usar diferentes environments se puede utilizar el archivo config.py con funciones inicializadoras que luego utilizamos desde el archivo conftest.py con el uso de 'parser'
 - Si se definen textos de help, las opciones customizadas se mostrarán en pytest -h
-
 
 ## Marcadores
 
@@ -71,7 +70,6 @@ Para generar un reporte corremos las pruebas indicando el nombre del archivos a 
 
 Para generar reportes xml corremos las pruebas indicando el nombre del archivo a generar: pytest --junitxml="results.xml"
 
-
 ## Integración con Jenkins
  -- To Do --
 
@@ -84,3 +82,8 @@ Se puede definir una razón para skipear una prueba: @mark.skip(reason="XX") y s
 
 Para definir un caso de prueba que se espera que falle, se usa el marcador xfail: @mark.xfail
 Se puede definir una razón para esperar una falla: @mark.xfail(reason="XX") y se puede leer con '-rx'
+
+## Parametros
+
+Podemos definir parámetros para una función de testeo con el marcador parametrize, definiendo el nombre del parametro y los posibles valores, y de esta forma la funcion se ejecutará 1 vez por cada parámetro
+También podemos definir parámetros para un fixture, en ese caso se ejecutará la función que haga uso del fixture 1 vez por cada parámetro del mismo
