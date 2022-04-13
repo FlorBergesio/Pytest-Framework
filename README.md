@@ -63,10 +63,12 @@ Un fixture puede tener los siguientes scopes:
 ## Reportes
 
 ### Reportes html con pytest-html
+
 Para generar reportes en un archivo html instalamos pytest-html: pip install pytest-html
 Para generar un reporte corremos las pruebas indicando el nombre del archivos a generar: pytest --html="results.html"
 
 ### Reportes xml con pytest core
+
 Para generar reportes xml corremos las pruebas indicando el nombre del archivo a generar: pytest --junitxml="results.xml"
 
 
@@ -76,4 +78,9 @@ Para generar reportes xml corremos las pruebas indicando el nombre del archivo a
 ## Skip de tests
 
 Se puede usar el marcador skip para saltar una prueba: @mark.skip
-Se puede definir una razó para skipear una prueba: @mark.skip(reason="XX") y se puede leer con las opciones '-rs' para leer (read) los skips
+Se puede definir una razón para skipear una prueba: @mark.skip(reason="XX") y se puede leer con las opciones '-rs' para leer (read) los skips
+
+## Fallas esperadas
+
+Para definir un caso de prueba que se espera que falle, se usa el marcador xfail: @mark.xfail
+Se puede definir una razón para esperar una falla: @mark.xfail(reason="XX") y se puede leer con '-rx'
