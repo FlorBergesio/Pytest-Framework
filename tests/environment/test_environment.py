@@ -1,8 +1,14 @@
+from pytest import mark
+
 def test_environment_is_qa(env):
     assert env == 'qa'
 
 def test_environment_is_dev(env):
     assert env == 'dev'
+
+@mark.skip(reason="Staging environment not yet created")
+def test_environment_is_staging(env):
+    assert env == 'staging'
 
 def test_base_url_in_dev_env(app_config, chrome_browser):
     url = app_config.base_url
