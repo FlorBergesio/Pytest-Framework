@@ -10,6 +10,13 @@ def test_environment_is_dev(env):
 def test_environment_is_staging(env):
     assert env == 'staging'
 
+@mark.xfail(reason="Expected to fail when wrong environment is used")
+def test_environment_is_env_wrong(env):
+    SUPPORTED_ENVS: list
+    SUPPORTED_ENVS = ['dev', 'qa']
+
+    assert ( env.lower() in SUPPORTED_ENVS )
+
 def test_base_url_in_dev_env(app_config, chrome_browser):
     url = app_config.base_url
     port = app_config.app_port
