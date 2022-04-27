@@ -87,3 +87,10 @@ Se puede definir una razón para esperar una falla: @mark.xfail(reason="XX") y s
 
 Podemos definir parámetros para una función de testeo con el marcador parametrize, definiendo el nombre del parametro y los posibles valores, y de esta forma la funcion se ejecutará 1 vez por cada parámetro
 También podemos definir parámetros para un fixture, en ese caso se ejecutará la función que haga uso del fixture 1 vez por cada parámetro del mismo
+
+## Tests en paralelo
+
+Podemos usar la librería pytest-xdist: pip install pytest-xdist
+De esta manera podemos definir el numero de threads a utilizar durante los tests. Por ejemplo para 4 threads: pytest tests/parallel -n4
+Es importante que los tests sean modulares y no dependientes de otros tests para que no interfieran con el uso de memoria
+Tambien podemos delegar la selección del número de threads de forma automática: pytest tests/parallel -nauto
