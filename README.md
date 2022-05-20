@@ -50,13 +50,14 @@ Se pueden marcar las clases, lo que implicará que todos los métodos de esas cl
 
 ## Fixtures
 
-Los fixtures se definen en el archivo conftest.py y se pueden utilizar desde cualquier archivo en la carpeta dondese encuentre y las subcarpetas de la misma
+Los fixtures se definen en el archivo conftest.py y se pueden utilizar desde cualquier archivo en la carpeta donde se encuentre y las subcarpetas de la misma
 Los fixtures pueden manejar su propio teardown, utilzando la palabra clave 'yield', todo lo que se defina después son las actividades de teardown
+Los fixtures son llamados cuando son usados (como argumento de una función), por lo que definir una función dentro de un fixture permite atrasar el momento de llamado de la función interna
 Un fixture puede tener los siguientes scopes:
 - function: usa una unica instancia por función, sin importar cuantas veces se lo llame. Es el valor por defecto en caso de que no se defina un scope
 - session: usa una unica instancia en la totalidad de la sesión de testeo
-- class
-- module
+- class: corre una vez por clase
+- module: corre una vez para un modulo
 - package
 
 ## Reportes
