@@ -63,3 +63,6 @@ results.xml
 # pytest-html reporting tool
 results.html
 /assets
+
+# drivers for selenium
+/drivers
