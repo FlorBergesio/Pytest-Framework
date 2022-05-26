@@ -95,3 +95,8 @@ Podemos usar la librería pytest-xdist: pip install pytest-xdist
 De esta manera podemos definir el numero de threads a utilizar durante los tests. Por ejemplo para 4 threads: pytest tests/parallel -n4
 Es importante que los tests sean modulares y no dependientes de otros tests para que no interfieran con el uso de memoria
 Tambien podemos delegar la selección del número de threads de forma automática: pytest tests/parallel -nauto
+
+## Selenium
+
+Instalamos selenium: pip install selenium
+Instalamos también los drivers de los navegadores que utilizaremos. Debemos recordar agregar el directorio en el que se encuentran los drivers al PATH 
