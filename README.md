@@ -121,3 +121,12 @@ Instalamos también los drivers de los navegadores que utilizaremos. Debemos rec
 - Desde la consola del inspector podemos probar xpath con: $x("camino hacia elemento")
 - Ejemplos: //button[@name='butn1'], //b[contains(text(), 'Product 1')]/../../p
 
+#### Otros By
+- ID = "id"
+- XPATH = "xpath"
+- LINK_TEXT = "link text"
+- PARTIAL_LINK_TEXT = "partial link text"
+- NAME = "name"
+- TAG_NAME = "tag name"
+- CLASS_NAME = "class name"
+- CSS_SELECTOR = "css selector"
