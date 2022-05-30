@@ -100,3 +100,24 @@ Tambien podemos delegar la selección del número de threads de forma automátic
 
 Instalamos selenium: pip install selenium
 Instalamos también los drivers de los navegadores que utilizaremos. Debemos recordar agregar el directorio en el que se encuentran los drivers al PATH 
+
+### Automatizar desde la consola
+- Entramos a la consola de python: python
+- Import del webdriver: from selenium import webdriver
+- Definimos un browser: browser = webdriver.Chrome()
+- Accedemos a una pagina: browser.get("https://techstepacademy.com/training-ground")
+- Podemos guardar el path del elemento en una variable auxiliar: input1Path = "input[id='ipt1']"
+- Import del By: from selenium.webdriver.common.by import By
+- Encontramos el elemento: input1Element = browser.find_element(By.CSS_SELECTOR, input1Path)
+- Enviamos modificaciones: input1Element.send_keys("Automated input content")
+
+#### Selectores CSS
+- Se pueden utilizar con By.CSS_SELECTOR
+- Desde la consola del inspector podemos probar selectores CSS con: $$("selector CSS")
+- Selector por id: input#ipt1 ó input[id='ipt1']
+
+#### XPATH
+- Se pueden utilizar con By.XPATH
+- Desde la consola del inspector podemos probar xpath con: $x("camino hacia elemento")
+- Ejemplos: //button[@name='butn1'], //b[contains(text(), 'Product 1')]/../../p
+
