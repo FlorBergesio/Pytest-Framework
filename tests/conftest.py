@@ -1,6 +1,5 @@
 from pytest import fixture
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from config import Config
 import json
 
@@ -13,7 +12,7 @@ def browser(request):
 
 @fixture(scope='function')
 def chrome_browser():
-    browser = webdriver.Chrome(ChromeDriverManager().install())
+    browser = webdriver.Chrome()
     yield browser
 
     #Teardown
