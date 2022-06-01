@@ -29,7 +29,7 @@ def test_riddle_of_stone(chrome_browser):
     if passwordContainerStoneElement.get_attribute("style") == "display: block;":
         inputSecretPath = "input[id='r2Input']"
         inputSecretElement = chrome_browser.find_element(By.CSS_SELECTOR, inputSecretPath)
-        inputSecretElement.send_keys(passwordStoneElement.get_attribute("innerHTML"))
+        inputSecretElement.send_keys(passwordStoneElement.text)
         time.sleep(1)
         buttonSecretPath = "button[id='r2Butn']"
         buttonSecretElement = chrome_browser.find_element(By.CSS_SELECTOR, buttonSecretPath)
@@ -42,13 +42,13 @@ def test_riddle_of_stone(chrome_browser):
             wealthList = chrome_browser.find_elements(By.XPATH, wealthListPath)
             maxWealth = 0
             for wealth in wealthList:
-                if int(wealth.get_attribute("innerHTML")) > maxWealth:
-                    maxWealth = int(wealth.get_attribute("innerHTML"))
+                if int(wealth.text) > maxWealth:
+                    maxWealth = int(wealth.text)
             richestMerchantPath = "//label/../p[contains(text(),'" + str(maxWealth) + "')]/../span/b"
             richestMerchantElement = chrome_browser.find_element(By.XPATH, richestMerchantPath)
             inputMerchantPath = "input[id='r3Input']"
             inputMerchantElement = chrome_browser.find_element(By.CSS_SELECTOR, inputMerchantPath)
-            inputMerchantElement.send_keys(richestMerchantElement.get_attribute("innerHTML"))
+            inputMerchantElement.send_keys(richestMerchantElement.text)
             time.sleep(1)
             buttonMerchantPath = "button[id='r3Butn']"
             buttonMerchantElement = chrome_browser.find_element(By.CSS_SELECTOR, buttonMerchantPath)
@@ -66,4 +66,4 @@ def test_riddle_of_stone(chrome_browser):
                 if successContainerFinalElement.get_attribute("style") == "display: block;":
                     successTextPath = "//div[@id='trialCompleteBanner']/h4"
                     successTextElement = chrome_browser.find_element(By.XPATH, successTextPath)
-                    assert successTextElement.get_attribute("innerHTML") == "Trial Complete"
+                    assert successTextElement.text == "Trial Complete"
