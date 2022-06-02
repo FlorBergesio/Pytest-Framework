@@ -130,3 +130,7 @@ Instalamos también los drivers de los navegadores que utilizaremos. Debemos rec
 - TAG_NAME = "tag name"
 - CLASS_NAME = "class name"
 - CSS_SELECTOR = "css selector"
+
+### Optimizacion de tiempos de espera
+Utilizar import time; time.sleep(x); no es la manera más optima de realizar esperas, ya que espera un tiempo determinado y no a una condición determinada.
+Para esperar por una condicion determinada se utilizan las librerías selenium.webdriver.support.wait y selenium.webdriver.support.expected_conditions en conjunto.
