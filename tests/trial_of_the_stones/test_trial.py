@@ -1,7 +1,8 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support.expected_conditions import visibility_of
+from selenium.webdriver.support.expected_conditions import visibility_of, alert_is_present
+from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.support.select import Select
 
 def test_selenium_automated_input_value(chrome_browser):
     chrome_browser.get("https://techstepacademy.com/training-ground")
@@ -9,6 +10,22 @@ def test_selenium_automated_input_value(chrome_browser):
     input1Element = chrome_browser.find_element(By.CSS_SELECTOR, input1Path)
     input1Element.send_keys("Automated input content")
     assert input1Element.get_attribute("value") == "Automated input content"
+
+def test_selenium_automated_alert(chrome_browser):
+    chrome_browser.get("https://techstepacademy.com/training-ground")
+    buttonElement = chrome_browser.find_element(By.CSS_SELECTOR, "button#b1")
+    buttonElement.click()
+    WebDriverWait(chrome_browser, 10).until(alert_is_present())
+    alertElement = Alert(chrome_browser)
+    assert alertElement.text == "You clickedButton1."
+
+def test_selenium_automated_select_value(chrome_browser):
+    chrome_browser.get("https://techstepacademy.com/training-ground")
+    selectElement = chrome_browser.find_element(By.CSS_SELECTOR, "select#sel1")
+    my_select = Select(selectElement)
+    print([elem.text for elem in my_select.options])
+    my_select.select_by_value("second")
+    assert my_select.first_selected_option.text == "Beets"
 
 def test_riddle_of_stone(chrome_browser):
     chrome_browser.get("https://techstepacademy.com/trial-of-the-stones")
