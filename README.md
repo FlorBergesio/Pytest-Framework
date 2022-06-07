@@ -43,6 +43,7 @@ Para correr solo las pruebas de un marcador: pytest -m marker_name
 Para correr las pruebas de varios marcadores: pytest -m "marker_name or another_marker"
 Para correr las pruebas que tienen varios marcadores a la vez: pytest -m "marker_name and another_marker"
 Para correr todas las pruebas excepto las de un marcador: pytest -m "not marker_name"
+para correr un test de browser de manera interactiva se puede comenzar en un archivo .py y ejecutarlo con "python -i path_to_file"
 
 ## Clases
 
