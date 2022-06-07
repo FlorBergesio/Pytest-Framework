@@ -135,3 +135,7 @@ Instalamos también los drivers de los navegadores que utilizaremos. Debemos rec
 ### Optimizacion de tiempos de espera
 Utilizar import time; time.sleep(x); no es la manera más optima de realizar esperas, ya que espera un tiempo determinado y no a una condición determinada.
 Para esperar por una condicion determinada se utilizan las librerías selenium.webdriver.support.wait y selenium.webdriver.support.expected_conditions en conjunto.
+
+### Iframes
+Se puede acceder a un iFrame con: browser.switch_to.frame(iframeElement)
+Y volver a la pagina origen con: browser.switch_to.default_content()
