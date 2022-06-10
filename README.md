@@ -139,3 +139,11 @@ Para esperar por una condicion determinada se utilizan las librerías selenium.w
 ### Iframes
 Se puede acceder a un iFrame con: browser.switch_to.frame(iframeElement)
 Y volver a la pagina origen con: browser.switch_to.default_content()
+
+## Page Objects
+Los Page Objects son clases que permiten:
+- Describir porciones útiles de una página, de manera legible
+- Manipular elementos de una página
+- Visualizar información útil sobre el estado actual de una página
+- Crear una capa de abstracción para manejar una página
+- Evitar duplicación de código para manejar browsers, paginas y elementos
