@@ -26,3 +26,11 @@ class BaseElement(object):
     def text(self):
         text = self.web_element.text
         return text
+
+    def input_text(self, txt):
+        self.web_element.send_keys(txt)
+        return None
+
+    def attribute(self, attr_name):
+        attribute = self.web_element.get_attribute(attr_name)
+        return attribute
