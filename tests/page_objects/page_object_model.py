@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from selenium import webdriver
+from .base_element import BaseElement
 
 class TrainingGroundPage:
     def __init__(self, driver):
@@ -8,6 +8,9 @@ class TrainingGroundPage:
 
     def go(self):
         self.driver.get(self.url)
+
+    """ 
+    First iteration of code, prior to cleanup with abstraction of BaseElement
 
     def type_inputElement_field(self, text):
         inputElement = self.driver.find_element(By.CSS_SELECTOR, "input[id='ipt1']")
@@ -24,3 +27,8 @@ class TrainingGroundPage:
         buttonElement = self.driver.find_element(By.CSS_SELECTOR, "button#b1")
         buttonElement.click()
         return None
+    """
+
+    @property
+    def button1(self):
+        return BaseElement(driver=self.driver, by=By.ID, value='b1')
