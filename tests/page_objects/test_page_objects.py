@@ -15,6 +15,7 @@ def test_page_object_input_field(chrome_browser):
     inputText = training_ground_page.get_inputElement_text()
     print(inputText)
     assert inputText == test_text
+    chrome_browser.quit()
 
 def test_page_object_base_element_button_click(chrome_browser):
     training_ground_page = TrainingGroundPage(driver=chrome_browser)
@@ -23,9 +24,10 @@ def test_page_object_base_element_button_click(chrome_browser):
     WebDriverWait(chrome_browser, 10).until(alert_is_present())
     alertElement = Alert(chrome_browser)
     assert alertElement.text == "You clickedButton1."
-    assert True
+    chrome_browser.quit()
 
 def test_page_object_base_element_button_text(chrome_browser):
     training_ground_page = TrainingGroundPage(driver=chrome_browser)
     training_ground_page.go()
     assert training_ground_page.button1.text == 'Button1'
+    chrome_browser.quit()
