@@ -147,3 +147,7 @@ Los Page Objects son clases que permiten:
 - Visualizar información útil sobre el estado actual de una página
 - Crear una capa de abstracción para manejar una página
 - Evitar duplicación de código para manejar browsers, paginas y elementos
+
+### Property
+Se puede definir una funcion con @property para llamarlas como propiedad en lugar de como funciones.
+Las propiedades permiten el "lazy loading", por lo que siempre intenta tomar los elementos en tiempo real,
