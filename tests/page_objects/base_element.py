@@ -8,7 +8,7 @@ class BaseElement(object):
         self.by = by
         self.locator = (self.by, self.value)
         self.web_element = None
-        pass
+        self.find()
     
     def find(self):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator=self.locator))
@@ -24,5 +24,5 @@ class BaseElement(object):
     
     @property
     def text(self):
-        text = self.web_element.text()
+        text = self.web_element.text
         return text
