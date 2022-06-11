@@ -1,3 +1,4 @@
+from .trial_of_the_stones_page import TrialStonesPage
 from .training_ground_page import TrainingGroundPage
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.expected_conditions import alert_is_present
@@ -30,4 +31,12 @@ def test_page_object_base_element_button_text(chrome_browser):
     training_ground_page = TrainingGroundPage(driver=chrome_browser)
     training_ground_page.go()
     assert training_ground_page.button1.text == 'Button1'
+    chrome_browser.quit()
+
+def test_page_object_trial_of_the_stones(chrome_browser):
+    trial_page = TrialStonesPage(driver=chrome_browser)
+    trial_page.go()
+    trial_page.stone_input.input_text("rock")
+    trial_page.stone_button.click()
+    assert trial_page.stone_password.text == "bamboo"
     chrome_browser.quit()
