@@ -1,4 +1,4 @@
-from .page_object_model import TrainingGroundPage
+from .training_ground_page import TrainingGroundPage
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.expected_conditions import alert_is_present
 from selenium.webdriver.common.alert import Alert
