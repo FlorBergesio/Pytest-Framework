@@ -1,13 +1,11 @@
 from selenium.webdriver.common.by import By
+
+from .base_page_object import BasePage
 from .base_element import BaseElement
 
-class TrainingGroundPage:
-    def __init__(self, driver):
-        self.driver = driver
-        self.url = "https://techstepacademy.com/training-ground"
+class TrainingGroundPage(BasePage):
 
-    def go(self):
-        self.driver.get(self.url)
+    url = "https://techstepacademy.com/training-ground"
 
     """ 
     First iteration of code, prior to cleanup with abstraction of BaseElement
