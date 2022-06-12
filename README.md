@@ -150,4 +150,8 @@ Los Page Objects son clases que permiten:
 
 ### Property
 Se puede definir una funcion con @property para llamarlas como propiedad en lugar de como funciones.
-Las propiedades permiten el "lazy loading", por lo que siempre intenta tomar los elementos en tiempo real,
+Las propiedades permiten el "lazy loading", por lo que siempre intenta tomar los elementos en tiempo real.
+
+## Web scraping
+Requerimientos: tener instalado lxml
+Utilizar arboles parseados con lxml es más rapido que utilizar selenium, ya que selenium constantemente accede a la pagina web mientras que el arbol se mantiene en memoria
